@@ -1,0 +1,15 @@
+in# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models
+
+class NewsItem(models.Model):
+	TURKEY="TR"
+	SWEDEN="SWE"
+	ENGLAND="ENG"
+	Choices_Set=[(TURKEY,"TURKEY"),(ENGLAND,"ENGLAND"),(SWEDEN,"SWEDEN"),(None,"Bunu göster")]
+	tittle=models.CharField(max_length=3,editable="False")
+	date_creation=models.DateTimeField(auto_now_add=False,error_messages={"blank":"ahaha"})
+	news_locale=models.CharField(max_length=3,choices=Choices_Set)
+	content=models.TextField()
+# Create your models here.
